@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Time Table</title>
+	
+	<style>
+		body {
+			background-image:url("bg.jpg");
+			background-repeat: no repeat;
+			background-attachment: fixed;
+			background-size: 100% 100%;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 1;
+		}
+
+		h1 {
+			text-align: center;
+			color: #343a40;
+		}
+		p1 {
+			margin: 20%;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: 15px auto;
+			background-color: pink;
+			border: 2px solid black;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		th,
+		td {
+			border: 1px solid black;
+                 	background-color: white;
+			padding: 10px;
+			text-align: center;
+		}
+
+		th {
+			background-color: pink;
+			color: #4b5320;
+		}
+
+		.highlight {
+			background-color: pink;
+			color: #4b5320;
+		}
+
+		.special {
+			background-color: pink;
+		}
+		
+		.click {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>MY TIMETABLE</h1>
+	<p1> *Tekan kod subjek untuk maklumat lanjut </p1>
+	<table>
+		<tr>
+			<th>Time/Day</th>
+			<th>Monday</th>
+			<th>Tuesday</th>
+			<th>Wednesday</th>
+			<th>Thursday</th>
+			<th>Friday</th>
+			<th>Saturday</th>
+		</tr>
+		<tr>
+			<td class="highlight"><b>0800<br>-<br>1000</b></td>
+			
+			<td class="click" a onclick="alert('\n\nCSC404: PENGATURCARAAN II \nBilik: Makmal MK14\nNama pensyarah: SHAKIRAH BINTI HASHIM')">
+			<strong> CSC404</strong>
+			</td>
+
+			
+			<td class="click" a onclick="alert('\n\nCSC520: PRINSIP SISTEM PENGENDALIAN  \nBilik: Bilik BK26\nNama pensyarah: NORHAZIANA BINTI YAHAYA RASHDI')">
+			<strong> CSC520</strong>
+			</td>
+
+			<td> </td>
+
+			<td class="click" a onclick="alert('\n\nICT450: REKABENTUK DAN PEMBANGUNAN PANGKALAN DATA \nBilik: -ONLINE- \nNama pensyarah: NOR AZIAH BINTI DAUD')">
+			<strong> ICT450</strong>
+			</td>
+
+			<td class="click" a onclick="alert('\n\nMAT421: KALKULUS I  \nBilik: Bilik BK25 \nNama pensyarah: HARLIZA BINTI MOHD HANIF')">
+			<strong> MAT421</strong>
+			</td>
+	    		
+			<td class="click" a onclick="alert('\n\nPDM121: SUKARELAWAN POLIS II  \nBilik: Padang Kawad \nNama pensyarah: -TIADA MAKLUMAT-')">
+			<strong> PDM121</strong> 
+			</td>
+
+		</tr>
+		<tr>
+			<td class="highlight"><b>1000<br>-<br>1200</b></td>
+			<td class="click" a onclick="alert('\n\nCSC520: PRINSIP SISTEM PENGENDALIAN  \nBilik: -ONLINE- \nNama pensyarah: NOOR LATIFFAH BINTI ADAM')">
+			<strong> CSC520</strong> 
+			</td>
+
+			<td class="click" a onclick="alert('\n\nMAT421: KALKULUS I  \nBilik: Bilik BK10 \nNama pensyarah: HARLIZA BINTI MOHD HANIF')">
+			<strong> MAT421</strong> 
+			</td>
+
+			<td class="click" a onclick="alert('\n\nCSC574: PEMBINAAN APLIKASI WEB DINAMIK  \nBilik: TH04 \nNama pensyarah: AZIZIAN BINTI MOHD SAPAWI')">
+			<strong> CSC574</strong> 
+			</td>
+
+			<td> </td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr>
+		  <td class="highlight"><b>1200<br>-<br>1400</b></td>
+			<td colspan="6" class="special">BREAK</td>
+		</tr>
+		<tr>
+			<td class="highlight"><b>1400 <br>-<br>1600</b></td>
+			<td class="click" a onclick="alert('\n\nCSC574: CSC404: PENGATURCARAAN II  \nBilik: -ONLINE- \nNama pensyarah: SHAKIRAH BINTI HASHIM')">
+			<strong> CSC404</strong> 
+			</td>
+
+			<td class="click" a onclick="alert('\n\nICT450: REKABENTUK DAN PEMBANGUNAN PANGKALAN DATA  \nBilik: Makmal MK15 \nNama pensyarah: NOR AZIAH BINTI DAUD')">
+			<strong> ICT450</strong> 
+			</td>
+
+			<td class="click" a onclick="alert('\n\nCSC574: PEMBILNAAN APLIKASI WEB DINAMIK  \nBilik: -ONLINE- \nNama pensyarah: AZIZIAN BINTI MOHD SAPAWI')" pointer="cursor">
+			<strong> CSC574</strong> 
+			</td>
+
+			<td class="click" a onclick="alert('\n\nSTA416: KEBARANGKALIAN DAN STATISTIK GUNAAN  \nBilik: Bilik BK37 \nNama pensyarah: NOOR FADHILAH BINTI AHMAD RADI \nAHMAD ZIA UL-SAUFIE BIN MOHAMAD JAPERI')">
+			<strong> STA416</strong> 
+			</td>
+
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td class="highlight"><b>1600 <br>- <br>1800</b></td>
+			<td class="click" a onclick="alert('\n\nSTA416: KEBARANGKALIAN DAN STATISTIK GUNAAN  \nBilik: Bilik BK25 \nNama pensyarah: NOOR FADHILAH BINTI AHMAD RADI \nAHMAD ZIA UL-SAUFIE BIN MOHAMAD JAPERI')">
+			<strong> STA416</strong> 
+			</td>
+
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+		</tr>
+	</table>
+</body>
+
+</html>

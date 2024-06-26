@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      box-sizing: border-box;
+      background-image: url("bg_img.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+      background-color: #ffffff; 
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      width: calc(100% - 40px);
+      margin: 20px auto;
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+      background-color: #fff;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+
+    li {
+      float: right;
+    }
+
+    li a, .dropbtn {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    li a:hover:not(.active), .dropdown:hover .dropbtn {
+      background-color: #b0acdd;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #d8d8f6;
+      min-width: 50px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #b0acdd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .topnav-right {
+      float: right;
+    }
+
+    .icon-bar {
+      width: 100%;
+      overflow: auto;
+    }
+
+    .icon-bar a {
+      float: right;
+      width: 5%;
+      text-align: center;
+      padding: 0;
+      color: #442c8e;
+      font-size: 25px;
+      margin-top: 6px;
+    }
+
+    .icon-bar a:hover {
+      background-color: #b0acdd;
+    }
+
+    .content {
+      padding: 8px;
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .sticky + .content {
+      padding-top: 60px;
+    }
+
+    .text {
+      font-family: courier;
+      margin-top: 30px;
+      margin-left: 180px;
+      text-align: left;
+      font-size: 17px;
+      color: black;
+    }
+
+    .head {
+      font-family: courier;
+      text-align: center;
+      font-size: 27px;
+      color: black;
+	  margin-bottom: 220px;
+    }
+
+    .content {
+      font-family: Tahoma;
+      margin-top: 10px;
+      margin-left: 100px;
+      margin-right: 100px;
+      text-align: left;
+      font-size: 12px;
+      color: black;
+    }
+
+    .bio {
+      font-family: Papyrus;
+      text-align: center;
+      font-size: 20px;
+    }
+    #section1{
+	height: 50px;
+	font-family: papyrus;
+	margin: 0px;
+	background-color: #fff;
+    }
+	
+    #section2, #section3 {
+      margin-top: 10px;
+	  padding: 20px;
+      font-family: Papyrus;
+      background-color: #fff;
+	  font-weight: bold;
+	  text-align: center;
+    }
+
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .contain {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+.modal {
+      display: none;
+      position: fixed; 
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.4); 
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; 
+      border: 1px solid #888;
+      width: 80%;
+	  border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s;
+    }
+
+    @-webkit-keyframes animatezoom {
+      from { -webkit-transform: scale(0); } 
+      to { -webkit-transform: scale(1); }
+    }
+  
+    @keyframes animatezoom {
+      from { transform: scale(0); } 
+      to { transform: scale(1); }
+    }
+
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+	div.scroll-container{
+	  background-color: #333;
+	  overflow: auto;
+	  white-space: nowrap;
+	  padding: 10px;
+	  border-radius: 10px;
+	}
+	div.scroll-container img{
+	  padding: 10px;
+	}
+	
+	.contnr{
+	  position: relative;
+	  display: none;
+	  border-radius: 10px;}
+	  
+	#imgText{
+	  position: absolute;
+	  bottom: 15px;
+	  left: 15px;
+	  color: white;
+	  font-size:20px;}
+	  
+	.closebtn{
+	  position: absolute;
+	  right:15px;
+	  color:white;
+	  top:10px;
+	  font-size:35px;
+	  cursor:pointer;}
+	
+	footer {
+	  padding: 20px;
+	  text-align: center;
+	}
+  </style>
+</head>
+<body>
+<div class="head" id="section1">
+	<div class="icon-bar">
+    <a href="https://youtube.com/@ainallao?si=F4H_qySozd7gUiz8" target="blank"><i class="fa fa-youtube"></i></a> 
+    <a href="https://www.instagram.com/ainaasyfqahh?igsh=b280Z3FpbnVkaDlj&utm_source=qr" target="blank"><i class="fa fa-instagram"></i></a> 
+	</div>
+</div>
+<ul>
+	<a href="#section1">
+    <img src="logo_img.jpg" alt="Logo" style="width:100px;height:90px;margin: 0px 40px;">
+	</a>
+	<div class="topnav-right">
+		<li><a href="sign out.html">Sign Out</a></li>
+		<li><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign in</a></li>
+		<li><a href="mytimetable.html" target="blank">Timetable</a></li>
+		<li><a href="#section3">Galleries</a></li>
+		<div class="dropdown">
+			<li class="dropbtn">Download
+			<i class="fa fa-caret-down"></i>
+			</li>
+			<div class="dropdown-content">
+			<a href="AcademicCalendar2324.pdf" target="blank">Academic Calendar 2023/2024</a>
+			</div>
+		</div>
+		<li><a href="#section2">Biography</a></li>
+		<div class="dropdown">
+			<li class="dropbtn">Links
+			<i class="fa fa-caret-down"></i>
+			</li>
+			<div class="dropdown-content">
+			<a href="https://uitm.edu.my" target="blank">UiTM Website</a>
+			<a href="https://kppim.uitm.edu.my" target="blank">KPPIM Website</a>
+			<a href="https://istudent.uitm.edu.my" target="blank">i-Student Portal</a>
+			</div>
+		</div>
+    </div>
+</ul>
+
+<div id="id01" class="modal">
+	<form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		<img src="donut.jpeg" style="width:100px;height:100px;" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="contain">
+		<label for="uname"><b>Username</b></label>
+		<input type="text" placeholder="Enter Username" name="uname" required>
+
+		<label for="psw"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="psw" required>
+      
+		<button type="submit">Sign in</button>
+		<label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me</label>
+    </div>
+
+    <p>Does not have an account? <a href="signup.html" style="color:dodgerblue">Sign up</a>.</p>
+
+    <div class="contain" style="background-color:#f1f1f1">
+		<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+	</form>
+</div>
+
+<script>
+  var modal = document.getElementById('id01');
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+<div class="text"> 
+	<strong><p>Hello !</p></strong>
+	<p>Welcome to</p>
+</div>
+
+<div class="head">
+	<strong><p>Ainallao's website!</p></strong>
+	<img src="gif.gif" alt="gif">
+</div>
+
+<div class="container">
+	<div class="bio" id="section2">
+    <h1>Biography</h1>
+	<img src="me.jpg" style="text-align:center; width:190px; height:230px;">
+	</div>
+	<div class="content">
+		<p>Name: Nurul Aina Syafiqah Binti Hairol Nizam.</p>
+		<p>Age: 21.</p>
+		<p>Birthday: February 13,2003.</p>
+		<p>Nationality: Malaysia.</p>
+		<p>Fav Food: Ayam Gepuk.</p>
+		<p>Fav Drink: GreenTea </p>
+		<p>Currently study at University Teknologi MARA, Shah Alam</p>
+		<p>Major in Bachelor of Computer Science (hons) Netcentric Computing</p>
+	</div>
+</div>
+<div class="container">
+	<div class="bio" id="section3">
+		<h2> MY GALLERIES </h2>
+	
+	    <div class="scroll-container">
+			<img src="g6.jpg" alt="picture" width="600" height="600" onclick="myFunction(this);">
+			<img src="g1.jpg" alt="picture" width="600" height="600" onclick="myFunction(this);">
+			<img src="g2.jpg" alt="picture" width="600" height="600" onclick="myFunction(this);">
+			<img src="g3.jpg" alt="picture" width="600" height="600" onclick="myFunction(this);">
+			<img src="g4.jpg" alt="picture" width="600" height="600" onclick="myFunction(this);">
+			<img src="g5.jpg" alt="picture" width="600" height="600" onclick="myFunction(this);">
+        </div>		  
+	</div>
+	<div class="contnr">
+		<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+		<img id="expendedImg" style="width:100%">
+		<div id="imgText"></div>
+		</div>
+	<script>
+		function myFunction(imgs) {
+		var expandImg = document.getElementById("expendedImg");
+		var imgText = document.getElementById("imgText");
+		expandImg.src = imgs.src;
+		imgText.innerHTML = imgs.alt;
+		expandImg.parentElement.style.display = "block";
+		}
+	</script>
+</div>
+<footer>
+	<p> <a href="#">Disclaimer & Copyright</a></p>
+</footer>
+</body>
+</html>

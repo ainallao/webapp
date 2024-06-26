@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+  <title>Website application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      box-sizing: border-box;
+      background-image: url("bg_img.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+	  background-position: center;
+	  margin:0;
+	  padding:10px;
+	  align-items: center;
+	  display: flex;
+	  flex-direction: column;
+	  font-size: 10px;
+    }
+
+	input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+	  outline:none;
+    }
+	
+	button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+	  opacity: 0.9;
+    }
+
+    button:hover {
+      opacity: 1;
+    }
+	.cancelbtn {
+	  padding: 14px 20px;
+	  background-color: #f44336;
+	}
+	.cancelbtn, .signupbtn {
+	  float: left;
+	  width: 50%;
+	}
+	.clearfix::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+	@media screen and (max-width:300px) {
+	  .cancelbtn, .signupbtn {
+	    width: 100%;
+	  }
+	}
+  </style>
+</head>
+<body>
+   <form action = "/action_page.php">
+      <h1 style="text-align: center; font-family: 'Papyrus',Fantasy; font-weight: bold;">Sign up</h1>
+	  <p style="text-align: center; font-family: 'Papyrus',Fantasy; font-weight: bold;"> Please fill in this form to create an account.</p>
+	  
+	  <label for="firstname"><b> First Name</b></label>
+	  <input type="text"  placeholder="Enter first name" name="firstname" id="firstname" required>
+	  
+	  <label for="lastname"><b> Last Name</b></label>
+	  <input type="text"  placeholder="Enter last name" name="lastname" id="lastname" required>
+
+      <label for="gender"><b> Gender</b></label>
+	  <input type="text"  placeholder="Enter gender" name="gender" id="gender" required>
+	  
+	  <label for="email"><b> Email</b></label>
+	  <input type="text"  placeholder="Enter email" name="email" id="email" required>
+	  
+	  <label for="psw"><b> Password</b></label>
+	  <input type="password"  placeholder="Enter password" name="psw" id="psw" required>
+	  
+	  <label for="psw-repeat"><b> Re-enter password</b></label>
+	  <input type="password"  placeholder="Re-enter password" name="psw-repeat" id="psw-repeat" required>
+      
+	  <label>
+	    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+	  </label>
+	  
+	  <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+	  
+	  <div class="clearfix">
+	    <button type="button" class="cancelbtn"><a href="homepage.html">Cancel</a></button>
+		<button type="submit" class="signupbtn">Sign up</button>
+	  </div>
+	</form>
+</body>
+</html>
+
+
+
